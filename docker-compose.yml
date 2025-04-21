@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+    pvz_service:
+        build: 
+            context: pvz_service
+        ports:
+            - 8090:8090
+        networks:
+            - social-network
+        depends_on:
+            - db
+        environment:
+            DB_HOST: db
+            DB_NAME: pvz
+            DB_USER: kv
+            DB_PASSWORD: kv_password
+            PYTHONPATH: /pvz_service
+
+    db:
+        image: postgres:13
+        environment:
+            POSTGRES_DB: pvz
+            POSTGRES_USER: kv
+            POSTGRES_PASSWORD: kv_password
+        ports:
+        - "5432:5432"
+        networks:
+            - social-network
+
+networks:
+    social-network:

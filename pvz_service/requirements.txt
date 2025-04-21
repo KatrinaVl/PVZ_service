@@ -1,0 +1,10 @@
+
+uuid
+Flask==2.0.3
+psycopg2-binary
+python-dotenv==0.19.2
+Werkzeug==2.2.2
+pytest==7.4.0
+pytest-cov==4.1.0
+passlib[bcrypt] 
+python-jose
