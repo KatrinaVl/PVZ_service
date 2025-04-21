@@ -63,5 +63,5 @@ docker-compose exec db psql -U kv pvz
 
 Скрипт script.js можно запускать:
 ```
-
+k6 run script.js
 ```
